@@ -15,7 +15,11 @@ public class CurrencyTest {
 
         Currency currency2 = currency.rate(2);
         assertThat(2.0, is(currency2.amount));
+    }
 
+    @Test
+    public void shouldItBeAValueObject () {
+        assertThat(true, is((new Currency(1)).equals(new Currency(1))));
     }
 
 }
