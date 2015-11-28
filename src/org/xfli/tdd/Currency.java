@@ -6,7 +6,7 @@ public class Currency {
         this.amount = amount;
     }
 
-    void rate(double usd) {
-        amount *= usd;
+    Currency rate(double usd) {
+        return new Currency(amount * usd);
     }
 }
