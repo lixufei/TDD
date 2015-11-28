@@ -1,7 +1,7 @@
 package org.xfli.tdd;
 
 public class Currency {
-    double amount;
+    private double amount;
     public Currency (double amount) {
         this.amount = amount;
     }
