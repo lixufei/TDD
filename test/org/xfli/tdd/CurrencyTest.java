@@ -9,15 +9,22 @@ public class CurrencyTest {
 
     @Test
     public void should1USDEquals1andhalfCHF () {
-        Currency currency = new Currency(1) ;
-        assertThat(new Currency(1.5), is(currency.rate(1.5)));
+        Dollar dollar = new Dollar(1) ;
+        assertThat(new Dollar(1.5), is(dollar.rate(1.5)));
 
-        assertThat(new Currency(2), is(currency.rate(2)));
+        assertThat(new Dollar(2), is(dollar.rate(2)));
     }
 
     @Test
     public void shouldItBeAValueObject () {
-        assertThat(true, is((new Currency(1)).equals(new Currency(1))));
+        assertThat(true, is((new Dollar(1)).equals(new Dollar(1))));
     }
 
+    @Test
+    public void testEquality () {
+        assertThat(true, is((new Dollar(1)).equals(new Dollar(1))));
+        assertThat(false, is((new Dollar(1)).equals(new Dollar(2))));
+        assertThat(true, is((new Franc(1)).equals(new Franc(1))));
+        assertThat(false, is((new Franc(1)).equals(new Franc(2))));
+    }
 }

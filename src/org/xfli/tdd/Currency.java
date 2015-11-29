@@ -1,14 +1,9 @@
 package org.xfli.tdd;
 
 public class Currency {
-    private double amount;
-    public Currency (double amount) {
-        this.amount = amount;
-    }
+    protected double amount;
 
-    Currency rate(double usd) {
-        return new Currency(amount * usd);
-    }
+    public Currency () {}
 
     public boolean equals(Object object) {
         return this.amount == ((Currency)object).amount;
