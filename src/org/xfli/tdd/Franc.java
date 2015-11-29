@@ -6,8 +6,8 @@ public class Franc extends Currency {
         this.amount = amount;
     }
 
-    Franc rate(double usd) {
-        return new Franc(amount * usd);
+    public Currency rate(double rate) {
+        return new Franc(amount * rate);
     }
 
 }

@@ -6,7 +6,8 @@ public class Dollar extends Currency{
         this.amount = amount;
     }
 
-    Dollar rate(double usd) {
-        return new Dollar(amount * usd);
+    public Currency rate(double rate) {
+        return new Dollar(amount * rate);
     }
+
 }
