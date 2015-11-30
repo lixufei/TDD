@@ -9,8 +9,4 @@ public class Dollar extends Money {
         super(amount, currency);
     }
 
-    public Money rate(double rate) {
-        return new Dollar(amount * rate);
-    }
-
 }

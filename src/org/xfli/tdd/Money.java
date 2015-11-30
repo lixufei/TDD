@@ -1,6 +1,6 @@
 package org.xfli.tdd;
 
-public abstract class Money {
+public class Money {
     protected double amount;
     protected String currency;
 
@@ -12,7 +12,7 @@ public abstract class Money {
 
     public boolean equals(Object object) {
         Money money = (Money)object;
-        return this.amount == money.amount && this.getClass() == money.getClass();
+        return this.amount == money.amount && this.currency == money.currency;
     }
 
     public static Dollar dollar(double amount) {
@@ -23,6 +23,8 @@ public abstract class Money {
         return new Franc(amount, "CHF");
     }
 
-    public abstract Money rate(double rate) ;
+    public Money rate(double rate) {
+        return new Money(amount * rate, currency) ;
+    }
 
 }

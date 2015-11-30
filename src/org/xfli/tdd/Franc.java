@@ -10,8 +10,4 @@ public class Franc extends Money {
         super(amount, currency);
     }
 
-    public Money rate(double rate) {
-        return new Franc(amount * rate);
-    }
-
 }
