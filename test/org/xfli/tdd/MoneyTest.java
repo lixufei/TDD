@@ -20,11 +20,9 @@ public class MoneyTest {
 
     @Test
     public void testEquality () {
-        assertThat(true, is((new Dollar(1)).equals(new Dollar(1))));
-        assertThat(false, is((new Dollar(1)).equals(new Dollar(2))));
-        assertThat(true, is((new Franc(1)).equals(new Franc(1))));
-        assertThat(false, is((new Franc(1)).equals(new Franc(2))));
-        assertThat(false, is((new Dollar(1)).equals(new Franc(1))));
+        assertThat(true, is((Money.dollar(1)).equals(Money.dollar(1))));
+        assertThat(false, is((Money.dollar(1)).equals(Money.dollar(2))));
+        assertThat(false, is((Money.dollar(1)).equals(Money.franc(1))));
     }
 
     @Test
@@ -35,6 +33,6 @@ public class MoneyTest {
 
     @Test
     public void testDifferentClassEquality () {
-        assertThat(true, is(new Money(10, "CHF").equals(new Franc(10, "CHF"))));
+        assertThat(true, is(new Money(10, "CHF").equals(new Money(10, "CHF"))));
     }
 }

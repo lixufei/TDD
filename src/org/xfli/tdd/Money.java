@@ -15,12 +15,12 @@ public class Money {
         return this.amount == money.amount && this.currency == money.currency;
     }
 
-    public static Dollar dollar(double amount) {
-        return new Dollar(amount, "USD");
+    public static Money dollar(double amount) {
+        return new Money(amount, "USD");
     }
 
-    public static Franc franc(double amount) {
-        return new Franc(amount, "CHF");
+    public static Money franc(double amount) {
+        return new Money(amount, "CHF");
     }
 
     public Money rate(double rate) {
