@@ -1,8 +1,9 @@
 package org.xfli.tdd;
 
-public class Bank implements Expression{
+public class Bank{
 
     public Money reduce(Expression source, String to) {
-        return Money.dollar(10);
+        return source.reduce(to);
     }
+
 }

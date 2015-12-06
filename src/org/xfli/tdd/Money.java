@@ -28,6 +28,10 @@ public class Money implements Expression{
     }
 
     Expression plus(Money dollar) {
-        return new Money(amount + dollar.amount, currency);
+        return new Sum(this, dollar);
+    }
+
+    public Money reduce (String to) {
+        return this;
     }
 }
