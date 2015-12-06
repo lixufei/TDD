@@ -1,6 +1,6 @@
 package org.xfli.tdd;
 
-public class Money {
+public class Money implements Expression{
     protected double amount;
     protected String currency;
 
@@ -27,4 +27,7 @@ public class Money {
         return new Money(amount * rate, currency) ;
     }
 
+    Expression plus(Money dollar) {
+        return new Money(amount + dollar.amount, currency);
+    }
 }

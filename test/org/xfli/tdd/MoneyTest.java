@@ -35,4 +35,14 @@ public class MoneyTest {
     public void testDifferentClassEquality () {
         assertThat(true, is(new Money(10, "CHF").equals(new Money(10, "CHF"))));
     }
+
+    @Test
+    public void testSimpleAddition () {
+        Money five = Money.dollar(5);
+        Expression sum = five.plus(five);
+        Bank bank = new Bank();
+        Money reduced = bank.reduce(sum, "USD");
+        assertThat(Money.dollar(10), is(reduced));
+    }
+
 }
