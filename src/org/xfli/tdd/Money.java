@@ -40,7 +40,7 @@ public class Money implements Expression{
         return new Sum(this, addend);
     }
 
-    Expression times (int multiplier) {
+    public Expression times (int multiplier) {
         return new Money(amount * multiplier, currency);
     }
 }
